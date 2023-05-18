@@ -44,6 +44,17 @@ const Footer = () => {
                         <br />
                         
                     </div>
+                    <div>
+                        <h4 className='footer-title font-semibold text-2xl'>Contact</h4>
+                        
+                        <div className='font-normal text-base  '>
+                            <p>524 Broadway , NYC</p>
+                            <br />
+                            <p>+1 777 - 978 - 5570</p>
+                            <br />
+                        </div>
+
+                    </div>
 
                 </div>
                 <div className='text-center py-8'>

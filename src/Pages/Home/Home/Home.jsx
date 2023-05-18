@@ -1,9 +1,18 @@
 import React from 'react';
+import ExtraSection1 from './extraSction/ExtraSection1';
+import ToyTabs from '../ToyTabs/ToyTabs';
+import ExtraSection2 from './extraSction/ExtraSection2';
 
 const Home = () => {
     return (
         <div>
-            <h2>This is Home page</h2>
+            <div className='my-16'>
+                <ExtraSection1 />
+            </div>
+            <ToyTabs />
+            <div className='my-16'>
+                <ExtraSection2 />
+            </div>
         </div>
     );
 };

@@ -7,3 +7,13 @@ ul a.active{
     color: blue;
     font-weight: 700;
 }
+
+.section-img{
+    height: 100%;
+    width: 100%;
+    background-image:  linear-gradient( rgba(15, 15, 15, 0.158), rgba(26, 26, 24, 0)), url('/src/assets/section/section-img.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+    
