@@ -10,11 +10,13 @@ import Details from "../Pages/Details/Details";
 import Private from "./Private";
 import Spinner from "../Pages/Shared/Spiner/Spinner";
 import AllToys from "../Pages/AllToys/AllToys";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout/>,
+      errorElement: <ErrorPage/>,
       children: [
         {
             path: '/',
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
     {
       path: '/details',
       element: <PrivateLayout/>,
+      errorElement: <ErrorPage/>,
       children: [
         {
           path: ':id',
@@ -36,6 +39,7 @@ const router = createBrowserRouter([
     {
       path: '/',
       element: <LoginLayout/>,
+      errorElement: <ErrorPage/>,
       children: [
         {
           path: '/login',
