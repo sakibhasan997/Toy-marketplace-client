@@ -29,8 +29,8 @@ const Banner = () => {
                 </div>
             </Carousel> */}
             <div className="carousel w-full">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src={banner1} className="w-full" />
+                <div id="slide1" className="carousel-item  relative w-full">
+                    <img src={banner1} className="w-full rounded-lg" />
                     <div className="absolute rounded-xl flex justify-end text-end items-center h-full w-full right-0 bottom-0 bg-gradient-to-l from-[#151515] to-[rgba(21, 21, 21, 0)]">
 
                         <div className='text-white  space-y-0 lg:space-y-7 pr-12 w-1/2'>
@@ -48,7 +48,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
-                    <img src={banner2} className="w-full" />
+                    <img src={banner2} className="w-full rounded-lg" />
                     <div className="absolute rounded-xl flex justify-start text-start items-center h-full w-full right-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
 
                         <div className='text-white space-y-0 lg:space-y-7 pl-12 w-1/2'>
@@ -66,7 +66,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
-                    <img src={banner3} className="w-full" />
+                    <img src={banner3} className="w-full rounded-lg" />
                     <div className="absolute rounded-xl flex justify-end text-end items-center h-full w-full right-0 bottom-0 bg-gradient-to-l from-[#151515] to-[rgba(21, 21, 21, 0)]">
 
                         <div className='text-white space-y-0 lg:space-y-7 pr-12 w-1/2'>

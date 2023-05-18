@@ -5,6 +5,10 @@ import LoginLayout from "../Layout/LoginLayout";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Login/Register";
 import Blogs from "../Pages/Blogs/Blogs";
+import PrivateLayout from "../Layout/PrivateLayout";
+import Details from "../Pages/Details/Details";
+import Private from "./Private";
+import Spinner from "../Pages/Shared/Spiner/Spinner";
 
 const router = createBrowserRouter([
     {
@@ -16,6 +20,16 @@ const router = createBrowserRouter([
             element: <Home/>
         },
         
+      ]
+    },
+    {
+      path: '/details',
+      element: <PrivateLayout/>,
+      children: [
+        {
+          path: ':id',
+          element: <Private><Details/></Private>
+        }
       ]
     },
     {

@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/icons/icons.jpg'
+import { AuthContext } from '../../../Providers/AuthProviders';
 // import { IconName } from "react-icons/fa";
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const navLink = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/blogs'>Blogs</NavLink></li>
         <li><NavLink to='/allToys'>All Toys</NavLink></li>
-        <li><NavLink to='/addToys'>Add Toys</NavLink></li>
-        <li><NavLink to='/myToys'>My Toys</NavLink></li>
+        {user ?
+            <>
+                <li><NavLink to='/addToys'>Add Toys</NavLink></li>
+                <li><NavLink to='/myToys'>My Toys</NavLink></li>
+            </>
+            :
+            ' '
+        }
 
 
 
@@ -20,7 +34,7 @@ const NavBar = () => {
     return (
         <>
             <div>
-                <div className="navbar bg-base-100">
+                <div className="navbar  py-5">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,16 +55,21 @@ const NavBar = () => {
                     </div>
                     <br />
                     <div className="navbar-end">
-                        <>
-                            <button title='LogOut' className="btn  btn-outline btn-error" >Log Out</button>
+                        {user ?
+                            <>
+                                <button onClick={handleLogOut} title='LogOut' className="btn  btn-outline btn-error" >Log Out</button>
+                            </>
+                            :
                             <Link to='/login' className="btn btn-outline btn-primary">Login</Link>
-                        </>
+                        }
                     </div>
                     <br />
 
-                    <div className='ms-5 w-[55px] h-[55px]'>
-                        <button> <img src="" title="hkdhfkh" className='text-[45px] w-[45px] h-[45px]  rounded-full bg-black' /></button>
-                    </div>
+                    {
+                        user && <div className='ms-5 w-[55px] h-[55px]'>
+                            <button> <img src={user.photoURL} title={user.displayName} className='text-[45px] w-[45px] h-[45px]  rounded-full bg-black' /></button>
+                        </div>
+                    }
 
                 </div>
             </div>

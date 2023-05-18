@@ -1,7 +1,53 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {  updateProfile } from 'firebase/auth';
+import { AuthContext } from '../../Providers/AuthProviders';
 
 const Register = () => {
+    const { createRegister } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('')
+
+
+    const handleRegister = (e) => {
+
+        e.preventDefault();
+        setSuccess('');
+        setError('');
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, photo, email, password);
+
+        if (!/(?=.*[A-Z])/.test(password)) {
+            setError('Please add at least one uppercase ');
+            return;
+        }
+
+        createRegister(email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                updateProfile(user, {displayName: name, photoURL: photo})
+                console.log(user);
+                form.reset();
+                setError('')
+                toast('Your Auth is successful');
+                setSuccess('Your Auth is successful')
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage);
+            });
+
+        // update profile
+        
+
+    }
+
     return (
         <div>
             <div className="hero mb-16">
@@ -10,22 +56,16 @@ const Register = () => {
                         <h1 className="text-5xl font-bold">Please Register Now!</h1>
 
                     </div>
-                    <Form>
+                    <Form onSubmit={handleRegister}>
                         <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-10">
                             <div className="card-body">
-                                <p className='text-red-600'></p>
-                                <p className='text-success'></p>
+                                <p className='text-red-600'>{error}</p>
+                                <p className='text-success'>{success}</p>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
                                     <input type="text" name="name" placeholder="Your Name.." className="input input-bordered" required />
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Photo URL</span>
-                                    </label>
-                                    <input type="text" name="photo" placeholder="Photo URL.." className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -39,6 +79,12 @@ const Register = () => {
                                     </label>
                                     <input type="password" name="password" placeholder="Your Password..." className="input input-bordered" required />
                                 </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Photo URL</span>
+                                    </label>
+                                    <input type="text" name="photo" placeholder="Photo URL.." className="input input-bordered" required />
+                                </div>
                                 {/* <div className="form-control mt-6"> */}
                                 <button className="btn btn-primary mt-6" type="submit">Register</button>
                                 {/* </div> */}
@@ -47,7 +93,7 @@ const Register = () => {
                         </div>
                     </Form>
                 </div>
-
+                <ToastContainer />
             </div>
         </div>
     );
