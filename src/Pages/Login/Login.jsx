@@ -92,16 +92,13 @@ const Login = () => {
                                     {/* </div> */}
                                     <div className="divider">OR</div>
                                     <div className='my-5 mx-auto flex gap-4'>
-                                        {/* <button onClick={handleGoogle} className='btn mb-2 btn-outline btn-primary flex gap-2 items-center'><FaGoogle className='' /> Google SignIn</button> */}
                                         <button onClick={handleGoogle} className="btn btn-circle btn-outline btn-primary">
                                             <FaGoogle className='' />
                                         </button>
                                         <button onClick={handleGithub} className="btn btn-circle btn-outline">
                                             <FaGithub />
                                         </button>
-                                        {/* <button onClick={handleGithub} className='btn btn-outline flex gap-2 items-center '><FaGithub /> GitHub SingIn</button> */}
                                     </div>
-
                                     <p className='mt-5'>Don't Have an Account? <Link className='link-hover btn-link' to='/register'>Register</Link> </p>
                                 </div>
                             </div>

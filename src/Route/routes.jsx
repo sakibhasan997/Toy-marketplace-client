@@ -9,6 +9,7 @@ import PrivateLayout from "../Layout/PrivateLayout";
 import Details from "../Pages/Details/Details";
 import Private from "./Private";
 import Spinner from "../Pages/Shared/Spiner/Spinner";
+import AllToys from "../Pages/AllToys/AllToys";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         {
           path: '/blogs',
           element: <Blogs/>
+        },
+        {
+          path: '/allToys',
+          element: <AllToys/>
         }
       ]
     },
