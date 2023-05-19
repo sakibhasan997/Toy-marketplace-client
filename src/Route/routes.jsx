@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         {
           path: ':id',
           element: <Private><Details/></Private>,
-          loader: ({params}) => fetch(`http://localhost:5000/tabToys/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-11-server-site-eight.vercel.app/tabToys/${params.id}`)
         }
       ]
     },
