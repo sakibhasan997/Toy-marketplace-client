@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from 'react-responsive-carousel';
 import banner1 from '../../../assets/imgs/banner1.jpeg'
 import banner2 from '../../../assets/imgs/banner2.jpeg'
 import banner3 from '../../../assets/imgs/banner3.jpeg'
@@ -10,24 +10,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 const Banner = () => {
     return (
         <div >
-            {/* <Carousel showArrows={true} interval={true}  >
-                <div>
-                    <img className='rounded' src={banner1} />
-                    <p>hello</p>
-                    <h2>Buy Kids Ride On Cars</h2>
-                    <p>Get 25% Off On First Order And Also Get Gift Voucher</p>
-                    <button className='btn btn-link'>Shop Now</button>
-
-                </div>
-                <div>
-                    <img className='rounded' src={banner2} />
-
-                </div>
-                <div>
-                    <img className='rounded' src={banner3} />
-
-                </div>
-            </Carousel> */}
+            
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item  relative w-full">
                     <img src={banner1} className="w-full rounded-lg" />

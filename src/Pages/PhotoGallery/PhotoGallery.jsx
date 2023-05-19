@@ -25,7 +25,7 @@ const PhotoGallery = () => {
                 <div className="divider w-1/3 mx-auto my-0">OR</div>
                 <p className='pt-3'>Let your kids relish their play time to the fullest,  buy battery cars for  children at Paytm Mall <br /> and catch their priceless smile!</p>
             </div>
-            <div className='grid grid-cols-2 lg:grid-cols-6 gap-4 mx-10 lg:mx-14 items-center gallery-img'>
+            <div  className='grid grid-cols-2 lg:grid-cols-6 gap-4 mx-10 lg:mx-14 items-center gallery-img'>
                 <img src={img1} alt="" />
                 <img src={img2} alt="" />
                 <img src={img3} alt="" />

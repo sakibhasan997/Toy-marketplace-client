@@ -12,7 +12,6 @@ const ExtraSection2 = () => {
                 <button className='btn btn-link'>SHOP NOW <FaArrowRight /></button>
             </div>
             </div>
-            {/* <img className=' w-full data-aos="zoom-in"' src={section} alt="" /> */}
         </div>
     );
 };

@@ -66,7 +66,7 @@ const NavBar = () => {
                         user && <div className='ms-5 w-[55px] h-[55px]'>
                             <button> <img src={user?.photoURL} title={user?.displayName} className='text-[45px] w-[45px] h-[45px]  rounded-full bg-black' /></button>
                         </div>
-                        
+
                     }
 
                 </div>
