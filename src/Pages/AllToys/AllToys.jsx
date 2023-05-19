@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ToysCard from './ToysCard';
+import useTitle from '../../Hooks/UseTitle';
 
 const AllToys = () => {
 
     const [toys, setToys] = useState([]);
+    useTitle('AllToys')
 
     useEffect(()=>{
         fetch('https://assignment-11-server-site-eight.vercel.app/toys')

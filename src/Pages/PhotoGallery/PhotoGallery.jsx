@@ -16,8 +16,10 @@ import img13 from '../../assets/car/car13.jpeg'
 import img14 from '../../assets/car/car14.jpeg'
 import img15 from '../../assets/car/car15.jpeg'
 import img16 from '../../assets/car/car16.jpeg'
+import useTitle from '../../Hooks/UseTitle';
 
 const PhotoGallery = () => {
+    useTitle('Home')
     return (
         <div className=' '>
             <div className='text-center py-8'>

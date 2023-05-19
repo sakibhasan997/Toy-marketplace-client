@@ -4,11 +4,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {  updateProfile } from 'firebase/auth';
 import { AuthContext } from '../../Providers/AuthProviders';
+import useTitle from '../../Hooks/UseTitle';
 
 const Register = () => {
     const { createRegister } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('')
+    useTitle('Register')
 
 
     const handleRegister = (e) => {

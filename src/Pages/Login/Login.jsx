@@ -4,10 +4,11 @@ import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../Providers/AuthProviders';
+import useTitle from '../../Hooks/UseTitle';
 
 const Login = () => {
     const { user, gProvider, gitProvider, createLogin } = useContext(AuthContext)
-
+    useTitle('Login')
 
     const navigate = useNavigate();
     const location = useLocation();

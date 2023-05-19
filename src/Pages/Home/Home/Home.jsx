@@ -3,8 +3,10 @@ import ExtraSection1 from './extraSction/ExtraSection1';
 import ToyTabs from '../ToyTabs/ToyTabs';
 import ExtraSection2 from './extraSction/ExtraSection2';
 import PhotoGallery from '../../PhotoGallery/PhotoGallery';
+import useTitle from '../../../Hooks/UseTitle';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <div className='my-16'>
