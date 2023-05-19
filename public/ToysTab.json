@@ -1,6 +1,6 @@
 [
     {
-        "cars_id": "1",
+        
         "category": "sports car",
         "cars": [
             {
@@ -34,7 +34,7 @@
         ]
     },
     {
-        "cars_id": "2",
+        
         "category": "truck",
         "cars": [
             {
@@ -68,7 +68,7 @@
         ]
     },
     {
-        "cars_id": "3",
+       
         "category": "regular car",
         "cars": [
             {

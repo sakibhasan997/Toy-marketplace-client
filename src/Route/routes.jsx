@@ -29,13 +29,14 @@ const router = createBrowserRouter([
       ]
     },
     {
-      path: '/details',
+      path: '/toyDetails',
       element: <PrivateLayout/>,
       errorElement: <ErrorPage/>,
       children: [
         {
           path: ':id',
-          element: <Private><Details/></Private>
+          element: <Private><Details/></Private>,
+          loader: ({params}) => fetch(`http://localhost:5000/tabToys/${params.id}`)
         }
       ]
     },
