@@ -9,44 +9,44 @@ import photo6 from '../../../../assets/kids/portfolio_06.jpg'
 
 const ExtraSection1 = () => {
 
-    const photos = [
-        {
-            src:'/src/assets/kids/portfolio_01.jpg',
-            width: 1,
-            height: 1
-        },
-        {
-            src: '/src/assets/kids/portfolio_02.jpg',
-            width: 1,
-            height: 1
-        },
-        {
-            src: '/src/assets/kids/portfolio_03.jpg',
-            width: 1,
-            height: 1
-        },
-        {
-            src: '/src/assets/kids/portfolio_04.jpg',
-            width: 1,
-            height: 1
-        },
-        {
-            src: '/src/assets/kids/portfolio_05.jpg',
-            width: 1,
-            height: 1
-        },
-        {
-            src: '/src/assets/kids/portfolio_06.jpg',
-            width: 1,
-            height: 1
-        },
-    ]
+    // const photos = [
+    //     {
+    //         src:'/src/assets/kids/portfolio_01.jpg',
+    //         width: 1,
+    //         height: 1
+    //     },
+    //     {
+    //         src: '/src/assets/kids/portfolio_02.jpg',
+    //         width: 1,
+    //         height: 1
+    //     },
+    //     {
+    //         src: '/src/assets/kids/portfolio_03.jpg',
+    //         width: 1,
+    //         height: 1
+    //     },
+    //     {
+    //         src: '/src/assets/kids/portfolio_04.jpg',
+    //         width: 1,
+    //         height: 1
+    //     },
+    //     {
+    //         src: '/src/assets/kids/portfolio_05.jpg',
+    //         width: 1,
+    //         height: 1
+    //     },
+    //     {
+    //         src: '/src/assets/kids/portfolio_06.jpg',
+    //         width: 1,
+    //         height: 1
+    //     },
+    // ]
 
     return (
         <>
             {/* <Gallery photos={photos} />; */}
-            <Gallery photos={photos} />;
-            <Gallery photos={photos} />;
+            {/* <Gallery photos={photos} />;
+            <Gallery photos={photos} />; */}
         </>
     )
 }
