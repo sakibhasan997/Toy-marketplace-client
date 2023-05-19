@@ -1,0 +1,104 @@
+[
+    {
+        "cars_id": "1",
+        "category": "sports car",
+        "cars": [
+            {
+                "id": "11",
+                "title": "Mega Monster Truck Madness",
+                "name": "Monster Truck Madness",
+                "price": 29.99,
+                "rating": 4.5,
+                "description": "An exciting monster truck toy with large wheels and high jumps.",
+                "available_quantity": 3,
+                "category": "Toys",
+                "sub-category": "sports car",
+                "user_img": "https://i.ibb.co/4jFFR8J/car4.jpg",
+                "toy_name": "Monster Truck Madness",
+                "seller": "Adventure Toys"
+            },
+            {
+                "id": "12",
+                "title": "Super Speed Racer",
+                "name": "Speed Racer",
+                "price": 19.99,
+                "rating": 4.2,
+                "description": "A fast and sleek toy car for racing enthusiasts.",
+                "available_quantity": 10,
+                "category": "Toys",
+                "sub-category": "sports car",
+                "user_img": "https://i.ibb.co/9VFJrK2/car1.jpg",
+                "toy_name": "Speed Racer",
+                "seller": "Toy World"
+            }
+        ]
+    },
+    {
+        "cars_id": "2",
+        "category": "truck",
+        "cars": [
+            {
+                "id": "13",
+                "title": "Off-Road Adventure Monster",
+                "name": " Baby Battery Operated Jeep",
+                "price": 24.99,
+                "rating": 4.7,
+                "description": "A rugged toy car designed for off-road adventures.",
+                "available_quantity": 5,
+                "category": "Toys",
+                "sub-category": "truck",
+                "user_img": "https://assetscdn1.paytm.com/images/catalog/product/K/KI/KIDOH-BABY-BABYOH-B18538443CB7C17/1615539609878_11.jpg?imwidth=320&impolicy=hq",
+                "toy_name": "Off-Road Adventure",
+                "seller": "Fun Toys"
+            },
+            {
+                "id": "14",
+                "title": "Ultimate Sports Car Simulator",
+                "name": "Battery operated Jeep",
+                "price": 39.99,
+                "rating": 4.8,
+                "description": "A realistic sports car simulator toy with steering and sound effects.",
+                "available_quantity": 6,
+                "category": "Toys",
+                "sub-category": "truck",
+                "user_img": "https://assetscdn1.paytm.com/images/catalog/product/K/KI/KIDJEEP-801-BATLION66090831D0486/1588576781835_4.jpg?imwidth=320&impolicy=hq",
+                "toy_name": "Sports Car Simulator",
+                "seller": "Playland Toys"
+            }
+        ]
+    },
+    {
+        "cars_id": "3",
+        "category": "regular car",
+        "cars": [
+            {
+                "id": "15",
+                "title": "City Cruiser Mini",
+                "name": "City Cruiser",
+                "price": 14.99,
+                "rating": 3.9,
+                "description": "A toy car perfect for cruising through the city streets.",
+                "available_quantity": 8,
+                "category": "Toys",
+                "sub-category": "regular car",
+                "user_img": "https://i.ibb.co/ZhCtHzJ/car3.jpg",
+                "toy_name": "City Cruiser",
+                "seller": "Kids Emporium"
+            },
+            {
+                "id": "16",
+                "title": "Police Pursuit Patrol Car",
+                "name": "Police Pursuit",
+                "price": 17.99,
+                "rating": 4.1,
+                "description": "A police car toy with flashing lights and sirens for exciting chases.",
+                "available_quantity": 12,
+                "category": "Toys",
+                "sub-category": "regular car",
+                "user_img": "https://i.ibb.co/Sy5d4hv/car6.jpg",
+                "toy_name": "Police Pursuit",
+                "seller": "Toy Palace"
+            }
+        ]
+    }
+]
