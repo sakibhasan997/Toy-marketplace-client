@@ -1,11 +1,13 @@
 import React, { Children, useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProviders';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { BallTriangle, ColorRing } from 'react-loader-spinner';
+import Swal from 'sweetalert2';
 
 const Private = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
+    const navigate = useNavigate();
 
     if (loading) {
         return <div className='my-container my-60 ml-[700px]'>
@@ -24,7 +26,20 @@ const Private = ({ children }) => {
     if (user) {
         return children
     }
+    else{
+        Swal.fire({
+            icon: 'warning',
+            title: 'User is not logged',
+            text: 'You have to login first',
+          })
+    }
     return <Navigate state={{ from: location }}  to='/login' replace></Navigate>
+
+        
+        
+    
+    
 };
 
 export default Private;
+
