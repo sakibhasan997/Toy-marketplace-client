@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyToysCard = (toy) => {
-    const { _id, price, title, toy_name, sub_category, seller_Name, available_quantity, user_img, postedBy } = toy.toy
-    console.log(toy.toy);
+const MyToysCard = ({ toy, handleDelete }) => {
+    const { _id, price, title, toy_name, sub_category, seller_Name, available_quantity, user_img, postedBy } = toy
+    console.log(toy);
+
+
+
     return (
-        
-            <tr>
-            <th>
-            </th>
+
+        <tr>
+
             <td>
 
                 <div className="avatar">
@@ -26,12 +28,15 @@ const MyToysCard = (toy) => {
             <td>${price}</td>
             <td>{available_quantity}</td>
             <th>
-                <Link to={`/toyDetails/${_id}`}>
-                    <button className="btn btn-outline btn-primary btn-sm">View Details</button>
+                <Link to={`/updateToys/${_id}`}>
+                    <button className="btn btn-outline btn-primary btn-sm">Update</button>
                 </Link>
             </th>
+            <th>
+                <button onClick={() => handleDelete(_id)} className="btn btn-outline btn-error btn-sm">Delete</button>
+            </th>
         </tr>
-        
+
     );
 };
 

@@ -5,6 +5,7 @@ import useTitle from '../../Hooks/UseTitle';
 const AllToys = () => {
 
     const [toys, setToys] = useState([]);
+    const [searchText, setSearchText] = useState("");
     useTitle('AllToys')
 
     useEffect(() => {
@@ -14,6 +15,15 @@ const AllToys = () => {
                 setToys(data);
             })
     }, [])
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/toySearchByTitle/${searchText}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setToys(data);
+          });
+      };
 
     return (
         <div className='my-5'>
@@ -25,7 +35,7 @@ const AllToys = () => {
                     className="p-2 input  border-blue-700"
                     placeholder="Search Toy Name"
                 />{" "}
-                <button className='btn btn-primary'>Search</button>
+                <button onClick={handleSearch} className='btn btn-primary'>Search</button>
             </div>
 
             <div className="overflow-x-auto w-full">

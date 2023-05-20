@@ -14,6 +14,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AddToysLayout from "../Layout/AddToysLayout";
 import AddToys from "../Pages/AddToys/AddToys";
 import MyToys from "../Pages/MyToys/MyToys";
+import UpdateToy from "../Pages/MyToys/UpdateToy";
 
 const router = createBrowserRouter([
     {
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
         {
           path: '/myToys',
           element: <MyToys/>
+        },
+        {
+          path: '/updateToys/:id',
+          element: <UpdateToy/>,
+          loader: ({params}) => fetch(`https://assignment-11-server-site-eight.vercel.app/toys/${params.id}`)
         }
       ]
     },

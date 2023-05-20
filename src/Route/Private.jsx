@@ -10,35 +10,34 @@ const Private = ({ children }) => {
     const navigate = useNavigate();
 
     if (loading) {
-        return <div className='my-container my-60 ml-[700px]'>
-            <BallTriangle
-                height={100}
-                width={100}
-                radius={5}
-                color="#4fa94d"
-                ariaLabel="ball-triangle-loading"
-                wrapperClass={{}}
-                wrapperStyle=""
+        return <div className='my-container my-32 ml-[300px]'>
+            <ColorRing
                 visible={true}
+                height="80"
+                width="80"
+                ariaLabel="blocks-loading"
+                wrapperStyle={{}}
+                wrapperClass="blocks-wrapper"
+                colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
             />
         </div>
     }
     if (user) {
         return children
     }
-    else{
+    else {
         Swal.fire({
             icon: 'warning',
             title: 'User is not logged',
             text: 'You have to login first',
-          })
+        })
     }
-    return <Navigate state={{ from: location }}  to='/login' replace></Navigate>
+    return <Navigate state={{ from: location }} to='/login' replace></Navigate>
 
-        
-        
-    
-    
+
+
+
+
 };
 
 export default Private;
