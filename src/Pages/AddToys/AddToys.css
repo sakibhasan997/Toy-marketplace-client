@@ -12,7 +12,7 @@
     align-items:center;
 }
 .text-input{
-    border: none;
+   border: 2px solid blue;
     padding: 15px;
     margin: 5px;
 }
@@ -20,7 +20,7 @@
     width: 60%;
     padding: 10px 20px;
     border: none;
-    background-color: rgb(33, 33, 115);
+    background-color: rgb(25, 25, 193);
     color: white;
     font-size:18px;
     font-weight: bold;
@@ -29,5 +29,6 @@
     border-radius: 2px;
 }
 .submit-btn:hover{
-    background-color: rgb(25, 25, 193);
+    background-color: rgb(33, 33, 115);
+   
 }

@@ -3,21 +3,42 @@ import { useForm } from "react-hook-form";
 import './AddToys.css'
 import { AuthContext } from '../../Providers/AuthProviders';
 import useTitle from '../../Hooks/UseTitle';
+import Swal from 'sweetalert2';
 
 const AddToys = () => {
-    const {user} = useContext(AuthContext)
-    useTitle('AddToys')
+  const { user } = useContext(AuthContext)
+  useTitle('AddToys')
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => {
 
-    return (
-        <div className='toy-container my-52 mx-auto'>
-            <div className='toy-title'>
-                <h2>Post Your Toys</h2>
-            </div>
-            <div className='toy-form'>
-            {/* <form onSubmit={handleSubmit(onSubmit)}>
+    fetch("http://localhost:5000/postToys", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.insertedId){
+          console.log(data);
+          Swal.fire({
+              title: 'Success!',
+              text: 'Coffee Added Successfully',
+              icon: 'success',
+              confirmButtonText: 'Cool'
+            })
+            data.reset();
+      }
+      });
+  };
+
+  return (
+    <div className=' my-40 mx-auto'>
+      <div className='toy-title text-center my-5'>
+        <h1 className='text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-blue-600'>POST YOUR TOYS</h1>
+      </div>
+      <div className='toy-form'>
+        {/* <form onSubmit={handleSubmit(onSubmit)}>
                 
                 <input className='input-filed w-1/2' defaultValue="test" {...register("example")} />
                 <input className='input-filed w-1/2' defaultValue="test" {...register("example")} />
@@ -37,74 +58,79 @@ const AddToys = () => {
 
                 <input type="submit" className='toy-submit' />
             </form> */}
-            <form onSubmit={handleSubmit(onSubmit)}>
-            {/* {errors.exampleRequired && <span>This field is required</span>} */}
-            <input
-              className="text-input"
-              {...register("title")}
-              placeholder="title"
-              defaultValue="Web developer"
-            />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {/* {errors.exampleRequired && <span>This field is required</span>} */}
+          <input
+            className="text-input"
+            {...register("seller_Name", { required: true })}
+            placeholder="Your Name"
+            defaultValue={user?.displayName}
 
-            <input
-              className="text-input"
-              {...register("salary", { required: true })}
-              placeholder="salary"
-              defaultValue="30k"
-            />
-            <input
-              className="text-input"
-              {...register("vacancy", { required: true })}
-              placeholder="vacancy"
-              type="number"
-            />
-            <select className="text-input" {...register("category")}>
-              <option value="Engineering">engineering</option>
-              <option value="Editor">Editor</option>
-              <option value="writer">Writer</option>
-              <option value="Developer">Developer</option>
+          />
+
+          <input
+            className="text-input"
+            {...register("price", { required: true })}
+            placeholder="Price"
+          // defaultValue="30k"
+          />
+          <input
+            className="text-input"
+            {...register("available_quantity", { required: true })}
+            placeholder="Quantity"
+            type="number"
+          />
+          <select className="text-input" {...register("sub_category", { required: true })}>
+            <option value="sports_cars">sports car</option>
+            <option value="truck">truck</option>
+            <option value="Regular_cars">Regular cars</option>
+          </select>
+          <select className="text-input" {...register("toy_name", { required: true })}>
+              <option value="muscle_Car">Muscle Car</option>
+              <option value="speed_Racer">Speed Racer</option>
+              <option value="Off_Road_Adventure">Off-Road Adventure</option>
+              <option value="Off_City_Cruiser">City Cruiser</option>
+              <option value="Monster_Truck_Madness">Monster Truck Madness</option>
+              <option value="Sports_Car_Simulator">Sports Car Simulator</option>
+              <option value="Police_Pursuit">Police Pursuit</option>
+              <option value="Demolition_Derby">Demolition Derby</option>
             </select>
-            <select className="text-input" {...register("status")}>
-              <option value="remote">Remote</option>
-              <option value="offline">Offline</option>
-            </select>
-            <input
-              className="text-input"
-              {...register("image")}
-              placeholder="image link"
-              type="url"
-              defaultValue="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600"
-            />
-            <input
-              className="text-input"
-              {...register("deadline")}
-              placeholder="deadline"
-              type="date"
-            />
-            <input
-              className="text-input"
-              value={user?.email}
-              {...register("postedBy")}
-              placeholder="your email"
-              type="email"
-            />
-            {/* <CreatableSelect
+          <input
+            className="text-input"
+            {...register("user_img", { required: true })}
+            placeholder="image link"
+            type="url"
+          />
+          <input
+            className="text-input"
+            {...register("rating", { required: true })}
+            placeholder="Rating"
+
+          />
+          <input
+            className="text-input"
+            value={user?.email}
+            {...register("postedBy", { required: true })}
+            placeholder="your email"
+            type="email"
+          />
+          {/* <CreatableSelect
               className="w-75"
               defaultValue={selectedOption}
               onChange={setSelectedOption}
               options={options}
               isMulti
             /> */}
-            <input
-              className="text-input"
-              {...register("description")}
-              placeholder="description"
-            />
-            <input className="submit-btn" value="Post Job" type="submit" />
-          </form>
-            </div>
-        </div>
-    );
+          <input
+            className="text-input"
+            {...register("description", { required: true })}
+            placeholder="description"
+          />
+          <input className="btn submit-btn" value="Post Toy" type="submit" />
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default AddToys;
