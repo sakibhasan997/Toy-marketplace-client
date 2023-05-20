@@ -1,65 +1,66 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import useTitle from '../../Hooks/UseTitle';
+import { AuthContext } from '../../Providers/AuthProviders';
+import MyToysCard from './MyToysCard';
 
 const MyToys = () => {
     useTitle('MyToys')
+
+    const { user } = useContext(AuthContext);
+    const [toys, setToys] = useState([]);
+
+    const url = `https://assignment-11-server-site-eight.vercel.app/toys?email=${user?.email}`;
+    // const url = `http://localhost:5000/toys?email=${user?.postedBy}`
+
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setToys(data))
+    }, [url])
+
+
     return (
         <div>
-            <div>
 
-            </div>
-            <div className="overflow-x-auto w-full my-8">
-                <table className="table w-full">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th>
-                                No
-                            </th>
-                            <th>Photo</th>
-                            <th>Name</th>
-                            <th>seller email </th>
-                            <th>quantity</th>
-                            <th>Price</th>
-                            <th>Update</th>
-                            <th>Deleted</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {/* row 1 */}
-                        {/* <tr>
-                            <th>
-                                
-                            </th>
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                            </td>
-                            <td>Available quantity</td>
-                            <td>Price</td>
-                            <td>Price</td>
-                            <td>
-                                <button className='btn btn-primary'>Updated</button>
-                            </td>
-                            <td>
-                                <button className='btn btn-error'>Delate</button>
-                            </td>
-                            
-                        </tr> */}
-                        
-                        
-                    </tbody>
-                    
 
-                </table>
+
+            <div className="overflow-x-auto w-full">
+            <table className="table w-full">
+                   
+                   <thead>
+                       <tr>
+                           <th>
+                               No
+                           </th>
+                           <th>Image</th>
+                           <th>Seller</th>
+                           <th>User Email</th>
+                           <th>Sub-category</th>
+                           <th>Price</th>
+                           <th>Price</th>
+                           <th>Price</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       {
+                           toys.map((toy) => (
+                               <MyToysCard
+                                   key={toy?._id}
+                                   toy={toy}
+                               />
+                           ))
+                       }
+                   </tbody>
+
+
+               </table>
             </div>
+
+
+
+
+           
+
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {  updateProfile } from 'firebase/auth';
@@ -10,6 +10,7 @@ const Register = () => {
     const { createRegister } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('')
+    // const navigate = useNavigate()
     useTitle('Register')
 
 
@@ -39,6 +40,7 @@ const Register = () => {
                 setError('')
                 toast('Your Auth is successful');
                 setSuccess('Your Auth is successful')
+                // navigate(form, { replace: true })
             })
             .catch((error) => {
                 const errorMessage = error.message;
