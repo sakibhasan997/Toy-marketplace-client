@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './gallery.css'
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 import img1 from '../../assets/car/car1.jpeg'
 import img2 from '../../assets/car/car2.jpeg'
 import img3 from '../../assets/car/car3.jpeg'
@@ -20,14 +22,25 @@ import useTitle from '../../Hooks/UseTitle';
 
 const PhotoGallery = () => {
     useTitle('Home')
+
+    useEffect(()=>{
+        Aos.init({
+            offset: 200,
+            duration: 600,
+            easing: 'ease-in-sine',
+            delay: 100,
+          });
+    },[])
+
+
     return (
         <div className=' '>
             <div className='text-center py-8'>
-                <h1 className='text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-blue-600'>OUR PHOTO GALLERY</h1>
+                <h1 className='text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-700'>OUR PHOTO GALLERY</h1>
                 <div className="divider w-1/3 mx-auto my-0">OR</div>
                 <p className='pt-3'>Let your kids relish their play time to the fullest,  buy battery cars for  children at Paytm Mall <br /> and catch their priceless smile!</p>
             </div>
-            <div  className='grid grid-cols-2 lg:grid-cols-6 gap-4 mx-10 lg:mx-14 items-center gallery-img'>
+            <div data-aos="fade-up" className='grid grid-cols-3 lg:grid-cols-6 gap-4 mx-10 lg:mx-14 items-center gallery-img'>
                 <img src={img1} alt="" />
                 <img src={img2} alt="" />
                 <img src={img3} alt="" />

@@ -17,8 +17,8 @@ const ToyTabs = () => {
             .then(data => {
                 setToys(data);
             })
-        }, [])
-        // console.log(toys);
+    }, [])
+    console.log(toys);
 
 
     return (
@@ -31,14 +31,14 @@ const ToyTabs = () => {
             <Tabs forceRenderTabPanel defaultIndex={1} >
                 <TabList>
                     <Tab>SPORTS CAR</Tab>
-                    <Tab>TRUCK</Tab>
                     <Tab>REGULAR CAR</Tab>
+                    <Tab>TRUCK</Tab>
                 </TabList>
 
                 <TabPanel>
                     <div className='grid grid-cols-1 lg:grid-cols-2'>
                         {
-                            toys[0]?.cars?.map((toy) => ( 
+                            toys[0]?.cars?.map((toy) => (
                                 <div key={toy.id}>
                                     <div className="hero min-h-full py-5 lg:py-20 ">
                                         <div className="hero-content flex-col lg:flex-row">
@@ -55,9 +55,10 @@ const ToyTabs = () => {
                                                     />
                                                     <span>{toy?.rating}</span>
                                                 </div>
-                                                <Link to={`/toyDetails/${toy.id}`}>
+                                                <br />
+                                                {/* <Link to={`/toyDetails/${toy?.id}`}> */}
                                                     <button className="btn btn-outline btn-primary">View Details</button>
-                                                </Link>
+                                                {/* </Link> */}
                                             </div>
                                         </div>
                                     </div>
@@ -87,9 +88,10 @@ const ToyTabs = () => {
                                                     />
                                                     <span>{toy?.rating}</span>
                                                 </div>
-                                                <Link to={`/toyDetails/${toy.id}`}>
-                                                    <button className="btn btn-outline btn-primary">View Details</button>
-                                                </Link>
+                                                <br />
+                                                {/* <Link to={`/toyDetails/${toy.id}`}> */}
+                                                <button className="btn btn-outline btn-primary">View Details</button>
+                                                {/* </Link> */}
                                             </div>
                                         </div>
                                     </div>
@@ -119,9 +121,10 @@ const ToyTabs = () => {
                                                     />
                                                     <span>{toy?.rating}</span>
                                                 </div>
-                                                <Link to={`/toyDetails/${toy.id}`}>
-                                                    <button className="btn btn-outline btn-primary">View Details</button>
-                                                </Link>
+                                                <br />
+
+                                                <button className="btn btn-outline btn-primary">View Details</button>
+
                                             </div>
                                         </div>
                                     </div>

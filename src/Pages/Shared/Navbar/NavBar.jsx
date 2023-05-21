@@ -59,13 +59,13 @@ const NavBar = () => {
                                 <button onClick={handleLogOut} title='LogOut' className="btn  btn-outline btn-error" >Log Out</button>
                             </>
                             :
-                            <Link to='/login' className="btn btn-outline btn-primary">Login</Link>
+                            <Link to='/login' className="btn btn-outline btn-primary ">Login</Link>
                         }
                     </div>
                     <br />
                     {
                         user && <div className='ms-5 w-[55px] h-[55px]  '>
-                            <img src={user?.photoURL} title={user?.displayName} className=' w-full h-[55px] object-fill rounded-full bg-black' />
+                            <img src={user?.photoURL} title={user?.displayName} className=' cursor-pointer w-[55px] h-[45px] object-fill rounded-full bg-black' />
                         </div>
 
                     }

@@ -25,13 +25,6 @@ const Private = ({ children }) => {
     if (user) {
         return children
     }
-    else {
-        Swal.fire({
-            icon: 'warning',
-            title: 'User is not logged',
-            text: 'You have to login first',
-        })
-    }
     return <Navigate state={{ from: location }} to='/login' replace></Navigate>
 
 

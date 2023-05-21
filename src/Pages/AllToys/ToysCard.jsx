@@ -28,7 +28,7 @@ const ToysCard = ({ toy,index }) => {
             <td>{available_quantity}</td>
             <th>
                 <Link to={`/toyDetails/${_id}`}>
-                    <button className="btn btn-outline btn-primary btn-sm">View Details</button>
+                    <button className="btn btn-outline btn-primary ">View Details</button>
                 </Link>
             </th>
         </tr>
