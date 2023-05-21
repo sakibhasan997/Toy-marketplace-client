@@ -8,6 +8,7 @@ const Private = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    
 
     if (loading) {
         return <div className='my-container my-32 ml-[300px]'>

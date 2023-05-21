@@ -14,19 +14,17 @@ const NavBar = () => {
     }
 
     const navLink = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/blogs'>Blogs</NavLink></li>
-        <li><NavLink to='/allToys'>All Toys</NavLink></li>
+        <li><NavLink title='Home' to='/'>Home</NavLink></li>
+        <li><NavLink title='Blogs' to='/blogs'>Blogs</NavLink></li>
+        <li><NavLink title='All-Toys' to='/allToys'>All Toys</NavLink></li>
         {user ?
             <>
-                <li><NavLink to='/addToys'>Add Toys</NavLink></li>
-                <li><NavLink to='/myToys'>My Toys</NavLink></li>
+                <li><NavLink title='Add Toys' to='/addToys'>Add Toys</NavLink></li>
+                <li><NavLink title='My Toys' to='/myToys'>My Toys</NavLink></li>
             </>
             :
             ' '
         }
-
-        {/* <li><Link to='/contact'>Contact</Link></li> */}
     </>
 
     return (
@@ -59,7 +57,7 @@ const NavBar = () => {
                                 <button onClick={handleLogOut} title='LogOut' className="btn  btn-outline btn-error" >Log Out</button>
                             </>
                             :
-                            <Link to='/login' className="btn btn-outline btn-primary ">Login</Link>
+                            <Link to='/login' title='Login' className="btn btn-outline btn-primary ">Login</Link>
                         }
                     </div>
                     <br />

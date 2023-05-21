@@ -101,7 +101,7 @@ const ToyTabs = () => {
                 <TabPanel>
                     <div className='grid grid-cols-1 lg:grid-cols-2'>
                         {
-                            toys[1]?.cars?.map((toy) => (
+                            toys[2]?.cars?.map((toy) => (
                                 <div key={toy.id}>
                                     <div className="hero min-h-full py-5 lg:py-20 ">
                                         <div className="hero-content flex-col lg:flex-row">
@@ -139,7 +139,7 @@ const ToyTabs = () => {
                 <TabPanel>
                     <div className='grid grid-cols-1 lg:grid-cols-2'>
                         {
-                            toys[2]?.cars?.map((toy) => (
+                            toys[1]?.cars?.map((toy) => (
                                 <div key={toy.id}>
                                     <div className="hero min-h-full py-5 lg:py-20 ">
                                         <div className="hero-content flex-col lg:flex-row">
