@@ -3,8 +3,10 @@ import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
 import { ToastContainer, toast } from 'react-toastify';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/UseTitle';
 
 const Details = () => {
+    useTitle('Details')
     const [disable, setDisable] = useState(false);
     const handleFavorite = () => {
         toast('Item Added Successfully')

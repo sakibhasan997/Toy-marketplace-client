@@ -26,11 +26,6 @@ const Private = ({ children }) => {
         return children
     }
     return <Navigate state={{ from: location }} to='/login' replace></Navigate>
-
-
-
-
-
 };
 
 export default Private;
